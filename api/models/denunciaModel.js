@@ -18,6 +18,15 @@ const denunciaSchema = new mongoose.Schema(
         "observacao": {
             "type": String,
             "required": false
+        },
+        "visibilidade": {
+            "type": Number,
+            "required": true
+        },
+        "datahoraSubmissao": {
+            "type": Date,
+            "required": true,
+            "default": Date.now()
         }
     }
 );

@@ -36,14 +36,13 @@
                 </span>
 
                 <div>
-                    <form action="/denuncias" method="POST" id="formDenuncia">
+                    <form action="/" method="POST" id="formDenuncia">
                         <div class="form-group formatacao-formulario">
                             <h2>FAÇA SUA DENÚNCIA</h2>
                             <div class="row">
                                 <div class="col-6">
                                     <legend>Descrição da sua Denúncia:</legend>
-                                    <textarea class="form-control"  name="descricao" id="textDenuncia" rows="9">
-                </textarea>
+                                    <textarea class="form-control"  name="descricao" id="textDenuncia" rows="9"></textarea>
                                 </div>
 
                                 <div class="col-6 formDetalhe">
@@ -58,12 +57,12 @@
                                         </legend>
 
                                         <p>
-                                            <input type="radio" name="privacidade" id="publico" value="1"/>
+                                            <input type="radio" name="visibilidade" id="publico" value="1"/>
                                             <label for="publico">Visível para o público</label>
 
                                         </p>
                                         <p>
-                                            <input type="radio" name="privacidade" id="privado"  value="0"/>
+                                            <input type="radio" name="visibilidade" id="privado"  value="0"/>
                                             <label for="privado">Visível apenas para a comissão</label>
                                         </p>
                                     </div>
