@@ -14,11 +14,17 @@ mongoose.connect(mongoURI, {useNewUrlParser: true})
 
 // Rota Denúncias:
 router.get('/denuncias', (req, res) => {
+    console.log(req.query);
     let auxJSON = [];
-    Denuncia.find({}, (err, denuncias) => {
-        denuncias.forEach(function(denuncia) {
-            auxJSON.push(denuncia);
-        });
+    Denuncia.find(req.query, (err, denuncias) => { // TODO IMPORTANTE: Não deixar visibilidade=1 sem chave especial no servidor (API é auth-única)
+        if(denuncias) { // previnindo "cannot read undefined"
+            denuncias.forEach(function (denuncia) {
+                auxJSON.push(denuncia);
+            });
+        }
+        else {
+            auxJSON.push("Nenhuma denúncia encontrada");
+        }
     })
     .then(() => {
         res.send(auxJSON);
